@@ -17,3 +17,9 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::get('userdetail','App\Http\Controllers\ApiUsersDetailController@index');
+Route::post('userdetail','App\Http\Controllers\ApiUsersDetailController@create');
+Route::put('/userdetail/{id}','App\Http\Controllers\ApiUsersDetailController@update');
+Route::delete('/userdetail/{id}','App\Http\Controllers\ApiUsersDetailController@delete');
+Route::get('/userdetail/{id}','App\Http\Controllers\ApiUsersDetailController@detail');

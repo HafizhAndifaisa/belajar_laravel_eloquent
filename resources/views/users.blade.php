@@ -4,35 +4,32 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" rel="stylesheet">
-        <title>Tutorial Laravel #21 : CRUD Eloquent Laravel - www.malasngoding.com</title>
+        <title>User Details Data</title>
     </head>
     <body>
         <div class="container">
             <div class="card mt-5">
                 <div class="card-header text-center">
-                    CRUD Data Pegawai - <a href="https://www.malasngoding.com/category/laravel" target="_blank">www.malasngoding.com</a>
+                    Data Detail User
                 </div>
                 <div class="card-body">
-                    <a href="/pegawai/tambah" class="btn btn-primary">Input Pegawai Baru</a>
+                    <a href="/users/tambah" class="btn btn-primary">Input User Baru</a>
                     <br/>
                     <br/>
                     <table class="table table-bordered table-hover table-striped">
                         <thead>
                             <tr>
                                 <th>Nama</th>
-                                <th>Alamat</th>
-                                <th>OPSI</th>
+                                <th>Usia</th>
+                                <th>Kota</th>
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach($pegawai as $p)
+                            @foreach($usersdetail as $user)
                             <tr>
-                                <td>{{ $p->nama }}</td>
-                                <td>{{ $p->alamat }}</td>
-                                <td>
-                                    <a href="/pegawai/edit/{{ $p->id }}" class="btn btn-warning">Edit</a>
-                                    <a href="/pegawai/hapus/{{ $p->id }}" class="btn btn-danger">Hapus</a>
-                                </td>
+                                <td>{{ $user->nama }}</td>
+                                <td>{{ $user->usia }}</td>
+                                <td>{{ $user->kota }}</td>
                             </tr>
                             @endforeach
                         </tbody>

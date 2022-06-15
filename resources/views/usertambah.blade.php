@@ -4,26 +4,27 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" rel="stylesheet">
-        <title>Tutorial Laravel #21 : CRUD Eloquent Laravel - www.malasngoding.com</title>
+        <title>Tambah Data User</title>
     </head>
     <body>
         <div class="container">
             <div class="card mt-5">
                 <div class="card-header text-center">
-                    CRUD Data Pegawai - <strong>TAMBAH DATA</strong> - <a href="https://www.malasngoding.com/category/laravel" target="_blank">www.malasngoding.com</a>
                 </div>
                 <div class="card-body">
-                    <a href="/pegawai" class="btn btn-primary">Kembali</a>
+                    <a href="/users" class="btn btn-primary">Kembali</a>
                     <br/>
                     <br/>
                     
-                    <form method="post" action="/pegawai/store">
+                    <form method="post" action="/users/store">
  
                         {{ csrf_field() }}
  
+                        
+ 
                         <div class="form-group">
                             <label>Nama</label>
-                            <input type="text" name="nama" class="form-control" placeholder="Nama pegawai .." value="{{ old('nama') }}">
+                            <input type="text" name="nama" class="form-control" placeholder="Nama.." value="{{ old('nama') }}">
  
                             @if($errors->has('nama'))
                                 <div class="text-danger">
@@ -32,14 +33,26 @@
                             @endif
  
                         </div>
- 
+
                         <div class="form-group">
-                            <label>Alamat</label>
-                            <textarea name="alamat" class="form-control" placeholder="Alamat pegawai .." ></textarea>
+                            <label>Usia</label>
+                            <input type="text" name="usia" class="form-control" placeholder="Usia.." value="{{ old('usia') }}">
  
-                             @if($errors->has('alamat'))
+                            @if($errors->has('usia'))
                                 <div class="text-danger">
-                                    {{ $errors->first('alamat')}}
+                                    {{ $errors->first('usia')}}
+                                </div>
+                            @endif
+ 
+                        </div>
+
+                        <div class="form-group">
+                            <label>Kota</label>
+                            <input type="text" name="kota" class="form-control" placeholder="Kota.." value="{{ old('kota') }}">
+ 
+                            @if($errors->has('kota'))
+                                <div class="text-danger">
+                                    {{ $errors->first('kota')}}
                                 </div>
                             @endif
  
